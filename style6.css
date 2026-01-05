@@ -1,0 +1,77 @@
+ /* fanaovana menu horizontale */
+/* le "root" pour faire une style global reutilisable dans d'autre balise */
+ :root{
+    --bg : #3a8cd8;/*rhf bg(background) d code couleur en 6 code no atao*/
+    --text : #4a06e9;/*atao 3chiffre rhf text*/
+    --accent : hsl(246, 67%, 49%);/*rhf accent d code couleur en 6 code no atao*/
+    --hover : #fdfdfd;
+    --radius : 8px;/*angle*/
+ }
+ /*reinitialisation legere pour la nav */
+ .main-nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.main-nav a{
+    display: inline-block;
+    padding: .6rem 1rem;
+    color: var(--text);
+    text-decoration: none;
+    border-radius:calc(var(--radius)) ;
+    font-weight: 600;
+    transition: background .12s ease, color .12s ease, transform .8s ease;
+}
+/*rhf mandalo d miova ny couleur*/
+.main-nav a:hover,
+.main-nav a:focus{
+    background: rgba(8, 180, 80, 0.12);
+    color: var(--accent);
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px hsla(0, 94%, 45%, 0.877)
+}
+
+/*etat du lien courant/actif*/
+.main-nav a:active,
+.main-nav a[aria-current ="page"]{
+    background: var(--accent);
+    color: #fdfdfdea;
+    box-shadow: 0 6px 18px rgba(74, 4, 187, 0.12);
+}
+/*petite mise en page de header*/
+.header{
+    background: var(--bg);
+    padding: .6rem 1rem;
+    border-bottom: 1px solid rgba(10, 202, 20, 0.12);
+    display: flex;
+    justify-content: center;/*centrage du texte*/
+}
+/*responsive :sur petit ecran*/
+@media(max-withd:640px){
+    .main-nav{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+    .main-nav a{
+        text-align: center;
+        padding: .75rem ;
+    }
+    .logo >img{
+        align-items: flex-start !important;
+        margin-left: 0px;
+        display: flex !important;
+
+    }
+}
+footer{
+    background: var(--bg);
+    padding: .6rem 1rem;
+    border-bottom: 1px solid rgba(10, 202, 20, 0.12);
+    display: flex;
+    justify-content: center;/*centrage du texte*/
+}
